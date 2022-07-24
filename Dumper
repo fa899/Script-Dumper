@@ -1,4 +1,4 @@
--- req = (request or http_request or syn and syn.request or fluxus and fluxus_request or fluxus.request) loadstring(req({Url="unknown",Method="GET"}))()
+-- req = (request or http_request or syn and syn.request or fluxus and fluxus_request or fluxus.request) loadstring(req({Url="https://raw.githubusercontent.com/fa899/Script-Dumper/main/Dumper/",Method="GET"}).Body)()
 print("Script dumper loading.")
 local clock = tick()
 local x = 0
