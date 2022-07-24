@@ -1,5 +1,3 @@
--- req = (request or http_request or syn and syn.request or fluxus and fluxus_request or fluxus.request or http and http.request) loadstring(req({Url="https://raw.githubusercontent.com/fa899/Script-Dumper/main/Dumper/",Method="GET"}).Body)()
-print("Script dumper loading.")
 local clock = tick()
 local x = 0
 function Write(txt)
@@ -58,13 +56,6 @@ for i,v in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
 end
 for i,v in pairs(game:GetService("ReplicatedFirst"):GetDescendants()) do
 	save("ReplicatedFirst",v)
-	if v:IsA("LocalScript") or v:IsA("Folder") or v:IsA("Script") or v:IsA("ModuleScript") then
-		Text.Text = "Saved "..v.Name.." ("..v:GetFullName()..")"
-		x += 1
-	end
-end
-for i,v in pairs(game:GetService("ReplicatedFirst"):GetDescendants()) do
-	save("Players",v)
 	if v:IsA("LocalScript") or v:IsA("Folder") or v:IsA("Script") or v:IsA("ModuleScript") then
 		Text.Text = "Saved "..v.Name.." ("..v:GetFullName()..")"
 		x += 1
