@@ -1,0 +1,6 @@
+if setfpscap() then
+    getgenv().setfps = function(fps)
+        local fpscap = set_fps_cap or setfpscap or set_max_fps or setmaxfps or maxfpscap or fpscap
+        return fpscap(fps)
+    end
+end
