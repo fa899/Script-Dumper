@@ -1,3 +1,4 @@
+-- FIXED RANDOM TIME THING?? MIGHT TAKE A MINUTE TO DECOMPILE A SCRIPT
 local clock = tick()
 local x = 0
 function Write(txt)
