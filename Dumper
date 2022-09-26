@@ -33,7 +33,9 @@ makefolder(name.."/LocalPlayer/PlayerGui")
 makefolder(name.."/LocalPlayer/Character")
 function save(dirpath,inst)
 	if inst:IsA("LocalScript") or inst:IsA("ModuleScript") then
-		writefile(name.."/"..dirpath.."/"..inst.Name.." (CLIENT("..inst.ClassName..")).lua","--"..inst:GetFullName().."\n"..decompile(inst))
+		local suc, err = pcall(function() decompile(inst) end)
+		local src = suc == true and decompile(inst) or suc == false and "-- Failed to decompile, reason: "..err
+		writefile(name.."/"..dirpath.."/"..inst.Name.." (CLIENT("..inst.ClassName..")).lua","--"..inst:GetFullName().."\n"..src)
 	elseif inst:IsA("Script") then
 		writefile(name.."/"..dirpath.."/"..inst.Name.." (SERVER).lua","--"..inst:GetFullName().."\n-- ServerScripts (Script) can not be decompiled.")
 	end
